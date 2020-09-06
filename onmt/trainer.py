@@ -50,11 +50,12 @@ def build_trainer(opt, device_id, model, fields,
     gpu_verbose_level = opt.gpu_verbose_level
 
     report_manager = onmt.utils.build_report_manager(opt)
-    trainer = onmt.Trainer(model, train_loss, valid_loss, optim, trunc_size,
-                           shard_size, data_type, norm_method,
-                           grad_accum_count, n_gpu, gpu_rank,
-                           gpu_verbose_level, report_manager,
-                           model_saver=model_saver)
+    trainer = Trainer(
+        model, train_loss, valid_loss, optim, trunc_size,
+        shard_size, data_type, norm_method,
+        grad_accum_count, n_gpu, gpu_rank,
+        gpu_verbose_level, report_manager, model_saver=model_saver
+    )
     return trainer
 
 
