@@ -9,3 +9,6 @@ python preprocess.py -train_src data/${dataset_name}/src-train \
                      -save_data data/${dataset_name}/${dataset} \
                      -src_seq_length 1000 -tgt_seq_length 1000 \
                      -src_vocab_size 1000 -tgt_vocab_size 1000 -share_vocab
+cp data/${dataset_name}/.train.0.pt data/${dataset_name}/${dataset}.train.pt
+cp data/${dataset_name}/.valid.0.pt data/${dataset_name}/${dataset}.valid.pt
+cp data/${dataset_name}/.vocab.pt data/${dataset_name}/${dataset}.vocab.pt
